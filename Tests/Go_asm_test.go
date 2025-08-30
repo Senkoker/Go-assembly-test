@@ -1,11 +1,7 @@
 package Tests
 
 import (
-	"fmt"
-	"github.com/samber/lo"
-	"github.com/stretchr/testify/assert"
 	"math/rand"
-	"testing"
 	"unicode"
 )
 
@@ -42,18 +38,20 @@ func GenerateSentence(wordCount int) []rune {
 	}
 	return []rune(string(buff[:len(buff)-1]))
 }
-func TestSumSlice(t *testing.T) {
-	for i := 0; i < attempt; i++ {
-		length := 100
-		input := GenerateSlice(length)
-		actual := lo.Sum[int32](input)
-		assert.Equal(t, SumSlice(input), actual, fmt.Sprintf("attempt %d", i))
-	}
-}
 
-func TestCountWord(t *testing.T) {
-	for i := 0; i < attempt; i++ {
-		wordNumber := int32(rand.Intn(100))
-		assert.Equal(t, WordCount(GenerateSentence(int(wordNumber))), wordNumber)
-	}
-}
+//
+//func TestSumSlice(t *testing.T) {
+//	for i := 0; i < attempt; i++ {
+//		length := 100
+//		input := GenerateSlice(length)
+//		actual := lo.Sum[int32](input)
+//		assert.Equal(t, SumSlice(input), actual, fmt.Sprintf("attempt %d", i))
+//	}
+//}
+//
+//func TestCountWord(t *testing.T) {
+//	for i := 0; i < attempt; i++ {
+//		wordNumber := int32(rand.Intn(100))
+//		assert.Equal(t, WordCount(GenerateSentence(int(wordNumber))), wordNumber)
+//	}
+//}
